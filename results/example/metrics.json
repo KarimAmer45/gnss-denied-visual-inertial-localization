@@ -1,0 +1,22 @@
+{
+  "dropout_duration_s": 34.0,
+  "dropout_end_s": 62.0,
+  "dropout_fused_position_rmse_m": 0.23979251313511615,
+  "dropout_improvement_percent": 99.10005902006357,
+  "dropout_inertial_odom_position_rmse_m": 26.645359915941945,
+  "dropout_start_s": 28.0,
+  "duration_s": 90.0,
+  "fused_final_error_m": 0.14553002014461003,
+  "fused_max_error_m": 1.5212347335411747,
+  "fused_position_rmse_m": 0.3390008357736706,
+  "fused_yaw_rmse_rad": 0.0358122217589985,
+  "gnss_fix_count": 56,
+  "inertial_odom_final_error_m": 77.98617086518674,
+  "inertial_odom_max_error_m": 77.98617086518674,
+  "inertial_odom_position_rmse_m": 37.8054208041301,
+  "inertial_odom_yaw_rmse_rad": 0.24154058050579685,
+  "odom_update_count": 901,
+  "seed": 7,
+  "visual_position_rmse_m": 0.8895665250076981,
+  "visual_update_count": 301
+}
