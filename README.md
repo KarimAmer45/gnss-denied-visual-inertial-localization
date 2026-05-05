@@ -6,7 +6,7 @@ Flagship robotics perception demo for localization when satellite fixes disappea
 
 ![Position error plot](results/example/position_error.png)
 
-## What This Demonstrates
+## Fusion workflow
 
 - Simulated GNSS dropout from `28s` to `62s` in a repeatable synthetic route.
 - IMU-style prediction with accelerometer and gyro bias drift.
@@ -120,7 +120,7 @@ The optional ROS2 C++ wrapper is in [`ros2/gnss_denied_vio_cpp`](ros2/gnss_denie
 - `/gnss/pose`
 - `/localization/ekf_odom`
 
-## Limitations And Next Steps
+## Field validation notes
 
 - The simulation is 2D and does not model roll, pitch, gravity alignment, camera intrinsics, or feature tracking.
 - Visual odometry is generated as a noisy drifting pose stream rather than from image frames.

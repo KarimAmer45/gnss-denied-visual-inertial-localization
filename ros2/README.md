@@ -4,7 +4,7 @@ Optional ROS2 package scaffold for connecting the GNSS-denied visual-inertial es
 
 ![Trajectory overview](../results/example/trajectory_overview.png)
 
-## What This Demonstrates
+## ROS2 wrapper scope
 
 - A ROS2 node boundary for IMU prediction plus GNSS and visual pose updates.
 - Topic names that mirror common robotics datasets and autonomy stacks.
@@ -37,7 +37,7 @@ source install/setup.bash
 ros2 run gnss_denied_vio_cpp vio_ekf_wrapper_node
 ```
 
-## Limitations And Next Steps
+## Integration notes
 
 - The C++ wrapper is a compact node scaffold, not a replacement for the full Python simulation.
 - It keeps a planar state and simple covariance model for readability.
