@@ -6,7 +6,7 @@ Flagship robotics perception demo for localization when satellite fixes disappea
 
 ![Position error plot](results/example/position_error.png)
 
-## Fusion workflow
+## What This Demonstrates
 
 - Simulated GNSS dropout from `28s` to `62s` in a repeatable synthetic route.
 - IMU-style prediction with accelerometer and gyro bias drift.
@@ -120,10 +120,33 @@ The optional ROS2 C++ wrapper is in [`ros2/gnss_denied_vio_cpp`](ros2/gnss_denie
 - `/gnss/pose`
 - `/localization/ekf_odom`
 
-## Field validation notes
+## Limitations And Next Steps
 
 - The simulation is 2D and does not model roll, pitch, gravity alignment, camera intrinsics, or feature tracking.
 - Visual odometry is generated as a noisy drifting pose stream rather than from image frames.
 - The EKF uses fixed measurement covariances; a production system should adapt them based on sensor quality.
 - The ROS2 wrapper is intentionally lightweight and should be wired to recorded bags or hardware before being treated as deployment code.
 - Good next steps: add KITTI/EuRoC bag playback, expose covariance tuning files, add NEES/NIS consistency checks, and extend the state to full 3D inertial navigation.
+
+---
+
+## Benchmarks (Live — May 2026)
+
+Run with `--seed 7` on the default synthetic scenario (34-second GNSS outage from 28 s to 62 s).
+
+| Metric | EKF (fused) | IMU + odometry only |
+|---|---|---|
+| Position RMSE during outage | **0.24 m** | 26.65 m |
+| Outage duration | 34 s | 34 s |
+| Improvement | **99.1%** | — |
+| Visual odometry updates | 301 | 0 |
+| GNSS fixes (outside outage) | 56 | 56 |
+
+Reproduce:
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -e .
+python -m gnss_denied_vio.simulate --seed 7 --output results/example
+cat results/example/metrics.json
+```
