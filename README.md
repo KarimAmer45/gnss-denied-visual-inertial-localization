@@ -130,9 +130,9 @@ The optional ROS2 C++ wrapper is in [`ros2/gnss_denied_vio_cpp`](ros2/gnss_denie
 
 ---
 
-## Benchmarks (Live — May 2026)
+## Benchmarks
 
-Run with `--seed 7` on the default synthetic scenario (34-second GNSS outage from 28 s to 62 s).
+Reproduced with `--seed 7` on the default synthetic scenario (34-second GNSS outage from 28 s to 62 s).
 
 | Metric | EKF (fused) | IMU + odometry only |
 |---|---|---|
