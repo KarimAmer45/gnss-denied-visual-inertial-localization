@@ -3,7 +3,7 @@
   <name>gnss_denied_vio_cpp</name>
   <version>0.1.0</version>
   <description>Optional ROS2 C++ wrapper for GNSS-denied visual-inertial localization.</description>
-  <maintainer email="demo@example.com">GNSS Denied VIO Demo</maintainer>
+  <maintainer email="karimamer456@gmail.com">GNSS Denied VIO Demo</maintainer>
   <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
