@@ -11,3 +11,4 @@ install/
 log/
 results/**/run.npz
 
+.claude/
